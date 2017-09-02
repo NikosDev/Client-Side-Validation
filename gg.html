@@ -1,17 +1,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.0/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/vee-validate/2.0.0-beta.25/vee-validate.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+<style>
+    body{
+        background-image: url(https://images7.alphacoders.com/369/369182.jpg);
+    }
+</style>
 
 <html>
 <div id="app">
     <div class='container my-4 d-flex justify-content-center'>
-    <form @submit.prevent="validateBeforeSubmit" style="
-    border-radius: inherit;
-    border-style: solid;
-    border-color: #d9534f;
-    padding: 30px;
-">
+    <form @submit.prevent="validateBeforeSubmit">
         <div class="form-group no-gutters">
             <div v-bind:class="{'': true, 'has-danger': errors.has('firstName')}">
                 <input id="firstName" name="firstName" type="text" class="form-control" placeholder="First Name" v-model="firstName" v-validate="'required|min:8|alpha'">
